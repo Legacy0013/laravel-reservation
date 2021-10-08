@@ -1,0 +1,10 @@
+@import '~jquery-ui/themes/base/all.css';
+@import '~daterangepicker/daterangepicker.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'modules/_colors.scss';
+@import 'components/index.scss';
+@import 'components/mail.scss';

@@ -1,0 +1,321 @@
+/*custom*/
+body {
+	font-family: 'Roboto', sans-serif;
+	color: $white;
+	background: $darkBlue;
+}
+.container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 1240px;
+	margin: 0 auto;
+	height: 100%;
+	padding: 1em 0;
+}
+h1 {
+	color: $white;
+	font-size: 3em;
+	margin-bottom: 1em;
+	text-align: center;
+}
+h2 {
+	color: $white;
+	font-size: 2em;
+	margin-bottom: 1em;
+	text-align: center;
+}
+.wrap {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	&.dates {
+		flex-direction: row;
+	}
+	label {
+		position: absolute;
+		top: -8px;
+		left: 20px;
+		color: $grey;
+		background: $darkBlue;
+		padding: 0 .5em;
+		cursor: pointer;
+		z-index: 999;
+	}
+	input, select, textarea {
+		height: 60px;
+		border-radius: 15px;
+		outline: none;
+		border: 1px solid $grey;
+		background: transparent;
+		color: $white;
+		padding: 1em;
+		width: 100%;
+		margin-bottom: 1.5em;
+		cursor: pointer;
+		&:-webkit-autofill {
+			-webkit-box-shadow: 0 0 0px 1000px $darkBlue inset;
+			-webkit-text-fill-color: $white;
+		  }
+		&:focus {
+			border: 1px solid $lightBlue;
+		}
+		&[type=date] {
+			border-radius: 15px;
+			&#start {
+				border-bottom-left-radius: 15px;
+				border-top-left-radius: 15px;
+			}
+			&#end {
+				border-bottom-right-radius: 15px;
+				border-top-right-radius: 15px;
+			}
+		}
+		&::selection {
+			color: $white;
+		}
+	}
+	#datefilter {
+		padding-top: 4em;
+		text-align: center;
+	}
+	option {
+		color: $midBlue;
+	}
+}
+.wrap.radio {
+	flex-direction: row;
+	width: 100%;
+	margin: 1em 0;
+	border-radius: 15px;
+	border: 3px solid $ultraDarkBlue;
+	label {
+		position:initial;
+		width: 50%;
+		text-align: center;
+	}
+	input[type="radio"].demo2 {
+		display: none;
+	}
+	  input[type="radio"].demo2 + label {
+		padding: 0.5rem 1rem;
+		font-size: 1.25rem;
+		line-height: 1.5;
+		border-radius: 10px;
+		color: $grey;
+		background-color: $ultraDarkBlue;
+		border: 1px solid transparent;
+		transition: all 0.5s ease-in-out;
+	  }
+	  input[type="radio"].demo2.demoyes:hover + label {
+		background-color: $ultraDarkBlue;
+	  }
+	  input[type="radio"].demo2.demoyes:checked + label {
+		background-color: $darkBlue;
+		color: $lightBlue;
+	  }
+	  input[type="radio"].demo2.demono:hover + label {
+		background-color: $ultraDarkBlue;
+	  }
+	  input[type="radio"].demo2.demono:checked + label {
+		background-color: $darkBlue;
+		color: $lightBlue;
+	  }
+}
+.wrap textarea {
+	min-height: 150px;
+	resize: vertical;
+	cursor:text;
+}
+input[type=submit] {
+	background: $lightBlue;
+	border: 1px solid $lightBlue;
+	font-weight: bold;
+	width: 100%;
+	padding: .5em;
+	border-radius: 15px;
+	outline: none;
+	cursor: pointer;
+	transition: background .25s;
+	&:hover {
+		background: rgba($lightBlue, .5);
+		border: 1px solid $lightBlue;
+	}
+	&.delete {
+		background: red;
+		border: 1px solid white;
+		&:hover {
+			background: rgba(red, .5);
+			border: 1px solid white;
+		}
+	}
+}
+// input[type="date"]::-webkit-calendar-picker-indicator.reservation {
+// 	opacity: 1;
+// 	margin-left: 0;
+// 	width: auto;
+// 	cursor: pointer;
+// }
+
+input[type=date] {
+	flex-direction: row-reverse;
+	justify-content: flex-start;
+}
+.daterangepicker {
+	color: #000;
+}
+.wrap.dates {
+	position: relative;
+	&::after {
+		position: absolute;
+		content: "";
+		background: $grey;
+		height: 81px;
+		width: 1px;
+		left: 50%;
+		top: 0;
+		z-index: 1;
+		user-select: none;
+		pointer-events: none;
+	}
+	.arrivee {
+		position: absolute;
+		width: 50%;
+		&::after {
+			position: absolute;
+			content: "";
+			background: url('/img/calendar.png') center / contain no-repeat;
+			height: 20px;
+			width: 20px;
+			left: 20px;
+			top: 20px;
+			z-index: 1;
+			user-select: none;
+			pointer-events: none;
+		}
+		.text {
+			position: absolute;
+			right: 40px;
+			top: 22px;
+			color: $lightBlue;
+		}
+	}
+	.depart {
+		position: absolute;
+		right: 0;
+		width: 50%;
+		&::after {
+			position: absolute;
+			content: "";
+			background: url('/img/calendar.png') center / contain no-repeat;
+			height: 20px;
+			width: 20px;
+			left: 20px;
+			top: 20px;
+			z-index: 1;
+			user-select: none;
+			pointer-events: none;
+		}
+		.text {
+			position: absolute;
+			right: 40px;
+			top: 22px;
+			color: $lightBlue;
+		}
+	}
+}
+.validation {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: $grey;
+	span {
+		font-size: 3em;
+		font-weight: bold;
+	}
+}
+.error{
+	color: red;
+	background: rgba(red, .2);
+	border: 2px solid red;
+	padding: .5em 1em;
+	font-size: .8em;
+	margin-bottom: 1.5em;
+	margin-top: -1em;
+	width: 100%;
+}
+.btn-retour {
+	background: #323755;
+	color: #fff;
+	margin-top: 2em;
+	padding: .5em 1em;
+	text-decoration: none;
+	border: 1px solid #fff;
+	border-radius: 15px;
+	transition: background .25s;
+	&:hover {
+		background: #191a32;
+		border: 1px solid #fff;
+	}
+}
+.list-hotels {
+	width: 800px;
+	margin: 1em 0;
+	tr:first-child {
+		background: #fff;
+		
+	}
+	tr {
+		height: 30px;
+		border-bottom: 1px solid #fff;
+		th {
+			color: #191a32;
+			font-weight: bold;
+		}
+		td, th {
+			padding: 1em;
+		}
+	}
+}
+nav {
+	&>div:nth-child(2) {
+		position: absolute;
+		left: 50%;
+		bottom: -4em;
+		transform: translate(-50%, 0);
+		flex-direction: column;
+		&>div:first-child { 
+			p {
+				color: #fff !important;
+				margin-bottom: 1em;
+			}
+		}
+	}
+}
+form {
+	width: 30%;
+	&.delete {
+		width: 100%;
+	}
+}
+.success {
+	background: green;
+	padding: .5em;
+	margin-bottom: 2em;
+	border-radius: 15px;
+	// width: 100%;
+}
+.container.index {
+	.btn-retour {
+		align-self: flex-start;
+		position: sticky;
+		top: 0;
+	}
+}
+.text-gray-500 {
+    font-weight: bold;
+    background-color: $midBlue;
+	color: white;
+  }
