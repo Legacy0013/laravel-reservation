@@ -20,6 +20,15 @@
     @endif
     <a class="btn-retour" href="{{ route('hotel.create') }}">Ajouter un hôtel</a>
     <h2>Liste des hôtels</h2>
+    <form action="hotel.index" method="post">
+        <select class="nbrLigne" name="nbrLigne" id="nbrLigne">
+            <option value="10" selected>10</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+        <input type="submit" value="Valider">
+    </form>
+   
     <table class="list-hotels">
         <tr>
             <th>ID</th>

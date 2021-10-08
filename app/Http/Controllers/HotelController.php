@@ -14,10 +14,11 @@ class HotelController extends Controller
      */
     public function index()
     {
-        $nbr = 10;
-        $hotels = Hotel::paginate(10);
+        $nbrLigne = 10;
+        $hotels = Hotel::paginate($nbrLigne);
         
-        return view('hotel.index', compact('hotels'));
+        return view('hotel.index', compact('hotels'))
+        ->with('nbrLigne');
     }
 
     /**

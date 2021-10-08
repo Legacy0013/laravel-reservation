@@ -20,6 +20,12 @@ class CreateHotelsTable extends Migration
             $table->date('quand');
             $table->text('description');
             $table->string('affiche')->nullable();
+            $table->unsignedBigInteger('categorie_id');
+            $table->foreign('categorie_id')
+                    ->references('id')
+                    ->on('categories')
+                    ->onDelete('restrict')
+                    ->onUpdate('restrict');
             $table->timestamps();
         });
     }

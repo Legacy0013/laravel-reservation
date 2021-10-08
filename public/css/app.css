@@ -34747,6 +34747,10 @@ form.delete {
   color: white;
 }
 
+.nbrLigne {
+  color: #191a32;
+}
+
 .top {
   display: flex;
 }
