@@ -63,3 +63,13 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 # laravel-reservation
+
+## Installation
+
+1. Cloner le dépôt
+2. Créer une bdd
+3. Editer le fichier .env
+4. Installer composer et npm
+5. php artisan migrate
+6. php artisan db:seed
+7. php artisan serve
