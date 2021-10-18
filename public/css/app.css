@@ -34469,6 +34469,10 @@ h2 {
   color: #fff;
 }
 
+.wrap input#etiquettes, .wrap select#etiquettes, .wrap textarea#etiquettes {
+  height: 120px;
+}
+
 .wrap #datefilter {
   padding-top: 4em;
   text-align: center;
@@ -34684,7 +34688,6 @@ input[type=date] {
 }
 
 .list-hotels {
-  width: 800px;
   margin: 1em 0;
 }
 

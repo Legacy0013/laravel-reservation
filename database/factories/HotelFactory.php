@@ -24,6 +24,7 @@ class HotelFactory extends Factory
         return [
             'nom' => $this->faker->name(),
             'lieu' => $this->faker->city(),
+            'categorie_id' => rand(1, 10),
             'quand'=> $this->faker->dateTimeInInterval('-20 days','+365 days', 'Europe/Paris'),
             'description' => $this->faker->paragraph(),
         ];

@@ -76,6 +76,9 @@ h2 {
 		&::selection {
 			color: $white;
 		}
+		&#etiquettes {
+			height: 120px;
+		}
 	}
 	#datefilter {
 		padding-top: 4em;
@@ -261,7 +264,7 @@ input[type=date] {
 	}
 }
 .list-hotels {
-	width: 800px;
+	// width: 800px;
 	margin: 1em 0;
 	tr:first-child {
 		background: #fff;

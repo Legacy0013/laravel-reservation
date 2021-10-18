@@ -21,6 +21,22 @@
             <label for="description">Description</label>
             <textarea name="description" id="description" cols="30" rows="10">{{ old('decsription') }}</textarea>
         </div>
+        <div class="wrap">
+            <label for="categorie_id">Catégorie</label>
+            <select name="categorie_id" id="categorie_id">
+                @foreach ($categories as $categorie)
+                    <option value="{{ $categorie->id }}">{{ $categorie->nom }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="wrap">
+            <label for="etiquettes[]">Étiquette</label>
+            <select name="etiquettes[]" id="etiquettes" multiple>
+                @foreach ($etiquettes as $etiquette)
+                    <option value="{{ $etiquette->id }}">{{ $etiquette->nom }}</option>
+                @endforeach
+            </select>
+        </div>
         <input type="submit" value="Valider">
     </form>
     <a class="btn-retour" href="{{ route('hotel.index') }}">Retour</a>

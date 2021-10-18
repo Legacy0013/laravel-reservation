@@ -15,4 +15,8 @@ class Hotel extends Model
     public function categorie() {
         return $this->belongsTo(Categorie::class);
     }
+    public function etiquettes() {
+        return $this->belongsToMany(Etiquette::class)
+            ->withTimestamps();
+    }
 }

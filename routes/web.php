@@ -40,6 +40,8 @@ Route::post('/', [ReservationController::class, 'store']);
 
 Route::resource('hotel', HotelController::class);
 
+Route::get('categorie/{slug}/evenements', [HotelController::class, 'index'])->name('hotels.categorie');
+
 // Route::get('index', function () {
     // $hotel = Hotel::find(5);
     // $hotel->description = rand(1,99);
